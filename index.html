@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#080b16" />
+    <title>Hanwha Tetris</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="Hanwha Tetris 홈">
+          <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+          <span>
+            <strong>HANWHA</strong>
+            <em>TETRIS</em>
+          </span>
+        </a>
+        <div class="topbar-actions">
+          <span class="live-pill"><span class="live-dot"></span> ARCADE MODE</span>
+          <button class="icon-button" id="soundToggle" type="button" aria-label="사운드 끄기" title="사운드 끄기">◖)))</button>
+        </div>
+      </header>
+
+      <section class="game-layout" aria-label="테트리스 게임">
+        <div class="play-column">
+          <div class="play-header">
+            <div>
+              <p class="eyebrow">HANWHA ARCADE / CURRENT SESSION</p>
+              <h1>Stack your <span>orange.</span></h1>
+            </div>
+            <div class="level-badge" aria-label="현재 레벨">
+              <span>LV</span>
+              <strong id="levelValue">01</strong>
+            </div>
+          </div>
+
+          <div class="board-frame">
+            <div class="board-glow"></div>
+            <div class="board" id="board" role="grid" aria-label="테트리스 보드"></div>
+            <div class="board-overlay" id="boardOverlay">
+              <div class="overlay-card">
+                <span class="overlay-kicker" id="overlayKicker">WELCOME TO THE GRID</span>
+                <h2 id="overlayTitle">Ready when<br /><span>you are.</span></h2>
+                <p id="overlayMessage">블록을 쌓고, 흐름을 만들어보세요.</p>
+                <button class="primary-button" id="overlayAction" type="button">게임 시작 <span>↗</span></button>
+              </div>
+            </div>
+          </div>
+
+          <div class="mobile-controls" aria-label="터치 조작">
+            <button class="control-button" data-action="left" type="button" aria-label="왼쪽 이동">←</button>
+            <button class="control-button" data-action="down" type="button" aria-label="빠르게 내리기">↓</button>
+            <button class="control-button control-button--rotate" data-action="rotate" type="button" aria-label="회전">↻</button>
+            <button class="control-button" data-action="right" type="button" aria-label="오른쪽 이동">→</button>
+            <button class="control-button control-button--wide" data-action="drop" type="button" aria-label="즉시 내리기">DROP ↓</button>
+          </div>
+        </div>
+
+        <aside class="side-panel">
+          <section class="panel-section next-section">
+            <div class="section-heading">
+              <span class="section-index">01</span>
+              <h2>NEXT PIECE</h2>
+            </div>
+            <div class="next-piece" id="nextPiece" aria-label="다음 블록 미리보기"></div>
+            <p class="hint-text">계획은 다음 움직임에서<br />시작됩니다.</p>
+          </section>
+
+          <section class="panel-section stats-section">
+            <div class="section-heading">
+              <span class="section-index">02</span>
+              <h2>YOUR RUN</h2>
+            </div>
+            <div class="stat-list">
+              <div class="stat-row stat-row--score">
+                <span>SCORE</span>
+                <strong id="scoreValue">000000</strong>
+              </div>
+              <div class="stat-row">
+                <span>LINES</span>
+                <strong id="linesValue">00</strong>
+              </div>
+              <div class="stat-row">
+                <span>BEST</span>
+                <strong id="bestValue">000000</strong>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel-section controls-section">
+            <div class="section-heading">
+              <span class="section-index">03</span>
+              <h2>CONTROLS</h2>
+            </div>
+            <div class="key-guide">
+              <div class="key-row"><span class="key-cap key-cap--wide">←</span><span class="key-cap key-cap--wide">→</span><small>MOVE</small></div>
+              <div class="key-row"><span class="key-cap">↑</span><small>ROTATE</small></div>
+              <div class="key-row"><span class="key-cap key-cap--wide">SPACE</span><small>HARD DROP</small></div>
+              <div class="key-row"><span class="key-cap">P</span><small>PAUSE</small></div>
+            </div>
+          </section>
+
+          <div class="side-actions">
+            <button class="secondary-button" id="pauseButton" type="button"><span class="button-icon">Ⅱ</span> 일시정지</button>
+            <button class="text-button" id="restartButton" type="button">다시 시작 <span>↻</span></button>
+          </div>
+        </aside>
+      </section>
+
+      <footer class="footer-bar">
+        <span>HANWHA ARCADE</span>
+        <span class="footer-line"></span>
+        <span>10 × 20 GRID / BUILD 01</span>
+      </footer>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
