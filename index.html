@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>해양시스템4팀 소개</title>
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: Arial, "Noto Sans KR", sans-serif;
+      line-height: 1.6;
+      color: #172033;
+      background: #f5f7fa;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+
+    body {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 24px 48px;
+      background: #fff;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      padding: 24px 0 18px;
+      border-bottom: 1px solid #d9dee8;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(10px);
+    }
+
+    nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 20px;
+      padding: 0;
+      margin: 20px 0 0;
+      list-style: none;
+    }
+
+    nav a {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      color: #174a78;
+      font-size: 0.92rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    nav a:hover,
+    nav a:focus-visible {
+      color: #fff;
+      background: #174a78;
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid #e4a11b;
+      outline-offset: 3px;
+    }
+
+    .skip-link {
+      position: fixed;
+      top: 12px;
+      left: 12px;
+      z-index: 20;
+      padding: 8px 12px;
+      color: #fff;
+      background: #102a43;
+      transform: translateY(-160%);
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    main {
+      padding-top: 24px;
+    }
+
+    section {
+      scroll-margin-top: 132px;
+      padding: 40px 0;
+      border-bottom: 1px solid #e5e9ef;
+    }
+
+    main > section:first-child {
+      padding: 48px 0 40px;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.25;
+      color: #102a43;
+    }
+
+    h1 {
+      margin: 8px 0;
+      font-size: 2.4rem;
+    }
+
+    h2 {
+      margin-top: 0;
+      font-size: 1.65rem;
+    }
+
+    h3 {
+      margin-bottom: 8px;
+      font-size: 1.1rem;
+    }
+
+    .eyebrow {
+      margin: 0;
+      color: #52606d;
+      font-weight: 700;
+    }
+
+    .mission {
+      max-width: 760px;
+      margin: 24px 0 0;
+      padding: 18px 20px;
+      border-left: 4px solid #2f80a8;
+      background: #eef6fa;
+      font-size: 1.15rem;
+    }
+
+    .table-hint {
+      margin: 10px 0 0;
+      color: #52606d;
+      font-size: 0.9rem;
+    }
+
+    .notice {
+      padding: 12px 16px;
+      border: 1px solid #e4c56a;
+      background: #fff8df;
+    }
+
+    .card {
+      padding: 16px;
+      border: 1px solid #d9dee8;
+      background: #fbfcfe;
+    }
+
+    dl {
+      display: grid;
+      grid-template-columns: minmax(110px, 0.3fr) 1fr;
+      gap: 8px 16px;
+      margin: 0;
+    }
+
+    dt {
+      font-weight: 700;
+    }
+
+    dd {
+      margin: 0;
+    }
+
+    table {
+      width: 100%;
+      min-width: 680px;
+      border-collapse: separate;
+      border-spacing: 0;
+      margin-top: 16px;
+      overflow: hidden;
+      border: 1px solid #cfd6e0;
+      border-radius: 12px;
+      font-size: 0.95rem;
+    }
+
+    caption {
+      margin-bottom: 8px;
+      text-align: left;
+      font-weight: 700;
+    }
+
+    th,
+    td {
+      padding: 12px 14px;
+      border-right: 1px solid #cfd6e0;
+      border-bottom: 1px solid #cfd6e0;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th:last-child,
+    td:last-child {
+      border-right: 0;
+    }
+
+    tbody tr:last-child td {
+      border-bottom: 0;
+    }
+
+    th {
+      color: #102a43;
+      background: #eaf1f6;
+      font-weight: 700;
+    }
+
+    tbody tr:nth-child(even) {
+      background: #fbfcfe;
+    }
+
+    tbody tr:hover {
+      background: #f1f7fa;
+    }
+
+    .org-chart,
+    .timeline,
+    .culture-list {
+      margin: 0;
+      padding-left: 24px;
+    }
+
+    .org-chart ul {
+      margin-top: 6px;
+    }
+
+    footer {
+      padding-top: 28px;
+      color: #52606d;
+      font-size: 0.9rem;
+    }
+
+    .org-chart > li {
+      padding: 16px 18px;
+      border: 1px solid #cfd6e0;
+      border-radius: 12px;
+      background: #fbfcfe;
+      font-weight: 700;
+    }
+
+    .org-chart ul {
+      padding-left: 24px;
+      border-left: 2px solid #b6cad7;
+      font-weight: 400;
+    }
+
+    @media (max-width: 760px) {
+      body {
+        padding: 0 16px 32px;
+      }
+
+      header {
+        position: relative;
+        padding-top: 20px;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      nav ul {
+        gap: 8px;
+        margin-top: 16px;
+      }
+
+      nav a {
+        padding: 5px 8px;
+        font-size: 0.84rem;
+      }
+
+      main {
+        padding-top: 0;
+      }
+
+      section,
+      main > section:first-child {
+        scroll-margin-top: 20px;
+        padding: 32px 0;
+      }
+
+      dl {
+        display: block;
+      }
+
+      dt {
+        margin-top: 16px;
+      }
+
+      dt:first-child {
+        margin-top: 0;
+      }
+
+      table {
+        display: block;
+        min-width: 680px;
+        overflow-x: auto;
+        border-radius: 10px;
+      }
+
+      .member-table {
+        min-width: 0;
+        border: 0;
+        overflow: visible;
+      }
+
+      .member-table thead {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+
+      .member-table tbody,
+      .member-table tr,
+      .member-table td {
+        display: block;
+        width: 100%;
+      }
+
+      .member-table tr {
+        margin-bottom: 14px;
+        border: 1px solid #cfd6e0;
+        border-radius: 12px;
+        background: #fbfcfe;
+      }
+
+      .member-table td {
+        display: grid;
+        grid-template-columns: 7rem 1fr;
+        gap: 12px;
+        border: 0;
+        border-bottom: 1px solid #e5e9ef;
+      }
+
+      .member-table td::before {
+        content: attr(data-label);
+        color: #52606d;
+        font-weight: 700;
+      }
+
+      .member-table td:last-child {
+        border-bottom: 0;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">본문으로 건너뛰기</a>
+  <header id="top">
+    <p class="eyebrow">해양사업부 · 해양연구소</p>
+    <h1>해양시스템4팀</h1>
+    <p>팀 소개서</p>
+    <p class="notice">교육용 가상 자료 (사내 정보 없음)</p>
+
+    <nav aria-label="페이지 섹션">
+      <ul>
+        <li><a href="#overview">조직 개요</a></li>
+        <li><a href="#organization">조직도</a></li>
+        <li><a href="#members">구성원</a></li>
+        <li><a href="#work">주요 업무</a></li>
+        <li><a href="#reviews">개발 단계</a></li>
+        <li><a href="#achievements">주요 성과</a></li>
+        <li><a href="#culture">팀 문화</a></li>
+        <li><a href="#goals">하반기 목표</a></li>
+        <li><a href="#collaboration">협업 창구</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <section aria-labelledby="mission-title">
+      <h2 id="mission-title">우리의 미션</h2>
+      <p class="mission">레이다가 표적을 놓치지 않도록, 신호처리 소프트웨어를 규격과 일정 안에서 믿을 수 있게 만든다</p>
+    </section>
+
+    <section id="overview" aria-labelledby="overview-title">
+      <h2 id="overview-title">조직 개요</h2>
+      <dl>
+        <dt>소속</dt>
+        <dd>해양시스템4팀</dd>
+        <dt>인원</dt>
+        <dd>8명 (팀장 1, SW개발파트 3, 시험평가파트 2, 품질 · 사업관리 2)</dd>
+        <dt>담당 체계</dt>
+        <dd>지상 감시레이다 A사업의 신호처리 · 표적추적 소프트웨어 (가상 사업)</dd>
+        <dt>고객</dt>
+        <dd>소요군 및 체계종합 담당 부서, 정부 품질보증 기관 (교육용 가상 설정)</dd>
+        <dt>적용 기준</dt>
+        <dd>무기체계 소프트웨어 개발 및 관리 지침, 국방규격, 사내 품질경영 절차</dd>
+        <dt>미션</dt>
+        <dd>레이다가 표적을 놓치지 않도록, 신호처리 소프트웨어를 규격과 일정 안에서 믿을 수 있게 만든다</dd>
+      </dl>
+
+      <h3>연혁</h3>
+      <ul class="timeline">
+        <li><strong>2021</strong>: 레이다체계개발팀에서 SW 기능을 분리해 SW개발2팀 신설</li>
+        <li><strong>2023</strong>: 시험평가파트 신설, 시험절차서(ATP) 표준 양식 도입</li>
+        <li><strong>2025</strong>: 형상관리 도구 이관, 정적분석 기반 코드 점검 정례화</li>
+        <li><strong>2026</strong>: 품질 · 사업관리 기능을 팀 안으로 통합 (현 8명 체제)</li>
+      </ul>
+    </section>
+
+    <section id="organization" aria-labelledby="organization-title">
+      <h2 id="organization-title">조직도</h2>
+      <ul class="org-chart">
+        <li>팀장 김우영 수석연구원
+          <ul>
+            <li>SW개발파트
+              <ul>
+                <li>파트장 정우진 책임연구원</li>
+                <li>김서윤 선임 · 박지호 연구원</li>
+              </ul>
+            </li>
+            <li>시험평가파트
+              <ul>
+                <li>파트장 이현수 책임연구원</li>
+                <li>최다인 선임연구원</li>
+              </ul>
+            </li>
+            <li>품질 · 사업관리
+              <ul>
+                <li>오세훈 책임연구원 (품질 · 형상관리)</li>
+                <li>한유빈 선임연구원 (일정 · 예산)</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section id="members" aria-labelledby="members-title">
+      <h2 id="members-title">구성원</h2>
+      <table class="member-table">
+        <caption>구성원별 직급, 파트, 담당 업무, 연차</caption>
+        <thead>
+          <tr>
+            <th scope="col">이름</th>
+            <th scope="col">직급 · 직책</th>
+            <th scope="col">파트</th>
+            <th scope="col">담당 업무</th>
+            <th scope="col">연차</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td data-label="이름">김우영</td><td data-label="직급 · 직책">수석연구원 · 팀장</td><td data-label="파트">-</td><td data-label="담당 업무">문서에 별도 기재 없음</td><td data-label="연차">문서에 별도 기재 없음</td></tr>
+          <tr><td data-label="이름">정우진</td><td data-label="직급 · 직책">책임연구원 · 파트장</td><td data-label="파트">SW개발</td><td data-label="담당 업무">신호처리 SW 아키텍처 설계, SRS · SDD 검토, 코드 리뷰 총괄</td><td data-label="연차">14년</td></tr>
+          <tr><td data-label="이름">김서윤</td><td data-label="직급 · 직책">선임연구원</td><td data-label="파트">SW개발</td><td data-label="담당 업무">표적 탐지 · 필터 알고리즘 구현, 단위시험 작성</td><td data-label="연차">8년</td></tr>
+          <tr><td data-label="이름">박지호</td><td data-label="직급 · 직책">연구원</td><td data-label="파트">SW개발</td><td data-label="담당 업무">표적추적 모듈 구현, 정적분석 지적사항 조치</td><td data-label="연차">3년</td></tr>
+          <tr><td data-label="이름">이현수</td><td data-label="직급 · 직책">책임연구원 · 파트장</td><td data-label="파트">시험평가</td><td data-label="담당 업무">시험 계획 수립, 통합시험 · 인수시험 절차서(ATP) 관리</td><td data-label="연차">13년</td></tr>
+          <tr><td data-label="이름">최다인</td><td data-label="직급 · 직책">선임연구원</td><td data-label="파트">시험평가</td><td data-label="담당 업무">회귀시험 자동화, 시험 결과보고서 작성</td><td data-label="연차">7년</td></tr>
+          <tr><td data-label="이름">오세훈</td><td data-label="직급 · 직책">책임연구원</td><td data-label="파트">품질 · 사업관리</td><td data-label="담당 업무">형상관리, 결함 관리, 품질보증 점검 대응</td><td data-label="연차">12년</td></tr>
+          <tr><td data-label="이름">한유빈</td><td data-label="직급 · 직책">선임연구원</td><td data-label="파트">품질 · 사업관리</td><td data-label="담당 업무">개발 일정 · 예산 관리, 회의 · 보고 취합</td><td data-label="연차">6년</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="work" aria-labelledby="work-title">
+      <h2 id="work-title">주요 업무와 산출물</h2>
+      <p class="table-hint">화면이 좁을 때 넓은 표는 좌우로 이동해 확인할 수 있습니다.</p>
+      <table>
+        <thead>
+          <tr><th scope="col">파트</th><th scope="col">하는 일</th><th scope="col">주요 산출물</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>SW개발</td><td>요구사항을 분석해 신호처리 · 표적추적 소프트웨어를 설계하고 구현한다</td><td>SRS(요구사항 명세서), SDD(설계기술서), 소스코드, 단위시험 결과</td></tr>
+          <tr><td>시험평가</td><td>요구 성능을 만족하는지 시험 계획을 세우고 통합 · 인수 시험을 수행한다</td><td>시험계획서, 시험절차서(ATP), 시험 결과보고서</td></tr>
+          <tr><td>품질 · 사업관리</td><td>형상과 결함을 추적하고, 개발 일정 · 예산 · 보고를 한곳에서 관리한다</td><td>형상관리 기록, 결함 목록, 일정표, 주간 · 월간 보고</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="reviews" aria-labelledby="reviews-title">
+      <h2 id="reviews-title">개발 단계와 검토 회의</h2>
+      <table>
+        <thead>
+          <tr><th scope="col">단계</th><th scope="col">무엇을 확인하나</th><th scope="col">우리 팀 산출물</th><th scope="col">시기(가상)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>SRR 요구사항 검토</td><td>요구사항이 빠짐없이 정리됐는가</td><td>SRS 초안, 요구사항 추적표</td><td>2026. 3.</td></tr>
+          <tr><td>PDR 기본설계 검토</td><td>설계 방향이 요구사항을 만족하는가</td><td>SDD 초안, 인터페이스 정의</td><td>2026. 6.</td></tr>
+          <tr><td>CDR 상세설계 검토</td><td>구현 가능한 수준으로 설계가 확정됐는가</td><td>SDD 확정본, 단위시험 계획</td><td>2026. 9.</td></tr>
+          <tr><td>TRR 시험준비 검토</td><td>시험을 시작할 준비가 됐는가</td><td>시험절차서(ATP), 형상 확정 목록</td><td>2026. 12.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="achievements" aria-labelledby="achievements-title">
+      <h2 id="achievements-title">주요 성과 <small>(2025 ~ 2026 상반기)</small></h2>
+      <table>
+        <thead>
+          <tr><th scope="col">성과</th><th scope="col">전</th><th scope="col">후</th><th scope="col">어떻게</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>시험 준비 기간 단축</td><td>평균 10일</td><td>평균 6일</td><td>시험절차서 표준 양식과 준비 체크리스트 도입</td></tr>
+          <tr><td>회귀시험 자동화</td><td>수작업 확인 120개</td><td>수작업 확인 70개</td><td>반복 확인 항목을 스크립트로 전환</td></tr>
+          <tr><td>정적분석 지적 감소</td><td>분기 9건</td><td>분기 4건</td><td>지적마다 원인 한 줄 기록, 코드 리뷰 2인 원칙</td></tr>
+        </tbody>
+      </table>
+      <p><strong>가장 자랑하는 것 :</strong> 시험 준비 체크리스트와 요구사항 추적표 양식. 옆 팀에서도 빌려 쓰고 있습니다.</p>
+    </section>
+
+    <section id="culture" aria-labelledby="culture-title">
+      <h2 id="culture-title">일하는 방식과 팀 문화</h2>
+      <ul class="culture-list">
+        <li><strong>금요일 "작은 개선"</strong>: 매주 금요일 오후, 한 사람씩 이번 주에 바꾼 작은 개선 한 가지를 5분 안에 공유한다</li>
+        <li><strong>코드 리뷰 2인 원칙</strong>: 모든 변경은 두 사람 이상이 읽고 형상관리에 등록한다</li>
+        <li><strong>시험 전 리허설</strong>: 큰 시험 전날에는 30분 동안 순서대로 말로 따라가 본다</li>
+        <li><strong>회의 세 줄 정리</strong>: 회의는 안건을 하루 전에 올리고, 결정 사항은 회의 끝에 세 줄로 남긴다</li>
+      </ul>
+    </section>
+
+    <section id="goals" aria-labelledby="goals-title">
+      <h2 id="goals-title">2026년 하반기 목표</h2>
+      <table>
+        <thead>
+          <tr><th scope="col">목표</th><th scope="col">측정 방법</th><th scope="col">담당</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>시험 준비 기간 6일 → 5일</td><td>시험별 준비 시작일과 시험일 기록</td><td>이현수</td></tr>
+          <tr><td>주간 보고 작성 시간 절반으로</td><td>보고 초안 자동 취합 도구 시범 적용</td><td>한유빈</td></tr>
+          <tr><td>요구사항 추적 누락 0건 유지</td><td>검토 회의 전 추적표 자동 점검</td><td>정우진</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="collaboration" aria-labelledby="collaboration-title">
+      <h2 id="collaboration-title">협업 부서와 연락 창구</h2>
+      <table>
+        <thead>
+          <tr><th scope="col">협업 부서</th><th scope="col">무엇을 함께 하나</th><th scope="col">우리 쪽 창구</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>체계설계팀</td><td>체계 요구사항을 소프트웨어 요구사항으로 나눈다</td><td>정우진</td></tr>
+          <tr><td>HW개발팀</td><td>송수신 · 신호처리 보드 인터페이스와 시험 장비 일정을 맞춘다</td><td>이현수</td></tr>
+          <tr><td>품질보증팀</td><td>품질 점검 일정과 결함 판정 기준을 맞춘다</td><td>오세훈</td></tr>
+          <tr><td>IPS · 사업관리팀</td><td>기술교범 · 군수지원 자료 일정과 예산을 맞춘다</td><td>한유빈</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <p>※ 이 문서의 조직 · 인물 · 수치는 교육 실습을 위해 만든 가상 자료입니다.</p>
+    <p><a href="#top">맨 위로 이동</a></p>
+  </footer>
+</body>
+</html>
